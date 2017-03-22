@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.cla.dao.DemoClassDao">
+    
+	<sql id="demoClassColumns">
+		a.id AS "id",
+		a.class_num AS "classNum",
+		a.class_acad AS "classAcad",
+		a.class_dept AS "classDept",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="demoClassJoins">
+	</sql>
+    
+	<select id="get" resultType="DemoClass">
+		SELECT 
+			<include refid="demoClassColumns"/>
+		FROM demo_class a
+		<include refid="demoClassJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="DemoClass">
+		SELECT 
+			<include refid="demoClassColumns"/>
+		FROM demo_class a
+		<include refid="demoClassJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="classNum != null and classNum != ''">
+				AND a.class_num = #{classNum}
+			</if>
+			<if test="classAcad != null and classAcad != ''">
+				AND a.class_acad = #{classAcad}
+			</if>
+			<if test="classDept != null and classDept != ''">
+				AND a.class_dept = #{classDept}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="DemoClass">
+		SELECT 
+			<include refid="demoClassColumns"/>
+		FROM demo_class a
+		<include refid="demoClassJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO demo_class(
+			id,
+			class_num,
+			class_acad,
+			class_dept,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{id},
+			#{classNum},
+			#{classAcad},
+			#{classDept},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE demo_class SET 	
+			class_num = #{classNum},
+			class_acad = #{classAcad},
+			class_dept = #{classDept},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE demo_class SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
