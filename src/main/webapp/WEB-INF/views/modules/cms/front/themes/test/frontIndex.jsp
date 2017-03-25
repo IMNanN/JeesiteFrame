@@ -10,55 +10,6 @@
 </head>
 <body>
 
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="${ctxStaticTheme}/dist/img/photo3.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>维斯布鲁克</p>
-         <!--  <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-        </div>
-      </div>
-
-      <!-- /.search form -->
-	  
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
-        <!-- <li class="header">MAIN NAVIGATION</li>  0820-->
-		<li><a href="${ctxStaticTheme}/pages/boso/contactlist.html"><i class="fa fa-user"></i> <span>联系人</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/formdlist.html"><i class="fa fa-pencil-square-o"></i> <span>表单</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/articlelist.html"><i class="fa fa-file-text"></i> <span>文案</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/reportlist.html"><i class="fa fa-book"></i> <span>报表</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/activitylist.html"><i class="fa fa-calendar-plus-o"></i> <span>活动/项目</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/folder.html"><i class="fa fa-folder"></i> <span>文件夹</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/mail.html"><i class="fa fa-envelope-o"></i> <span>邮件</span></a></li>
-		<li><a href="${ctxStaticTheme}/pages/boso/message.html"><i class="fa fa-mobile-phone (alias)"></i> <span>短信</span></a></li>
-		
-		
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>模板中心</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="${ctxStaticTheme}/index.html"><i class="fa fa-pencil-square-o fa-list"></i> 表单模板</a></li>
-            <li class="active"><a href="${ctxStaticTheme}/index.html"><i class="fa fa-file-text"></i> 文案模板</a></li>
-            <li class="active"><a href="${ctxStaticTheme}/index.html"><i class="fa fa-book"></i> 报表模板</a></li>
-            <li class="active"><a href="${ctxStaticTheme}/index.html"><i class="fa  fa-list-alt"></i> 应用模板</a></li>			
-          </ul>
-        </li>
-		
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
   <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
